@@ -1,7 +1,7 @@
 from cmath import atan, pi
 from tkinter import Label, Tk, Canvas, Frame, Scrollbar
 from tkinter import BOTH, HORIZONTAL, ALL, NW, N, W
-from math import tan, radians
+from math import tan, radians, atan, pi
 
 def solution_of_the_equation(k, point) -> tuple:
     '''Решает уравние вида y=kx + b по заданной точке для нахождения b
@@ -106,7 +106,8 @@ def data_input():
     if input('Задать а? (y/N)') in ('y', 'Y'):
         a = float(input("a в градусах: ")) 
     else:
-        a = float(str(atan(y / d) * 180 / pi)[1:-4])
+        # a = float(str(atan(y / d) * 180 / pi)[1:-4])
+        a = atan(y / d) * 180 / pi
         print("ЗАДАННО a=", a)
     n = int(input("N: "))
     f = int(input("F в мм: ")) * 5
